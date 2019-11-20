@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+
+{% block admin-panel %}
+
+		<!-- Default dropleft button -->
+				<div class="btn-group dropleft">
+				  <button type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+				    Create
+				  </button>
+
+				  <div class="dropdown-menu">
+				    <a href="{% url 'post_create_url' %}" class="dropdown-item">Post</a>
+				    <div class="dropdown-divider"></div>
+				    <a href="{% url 'tag_create_url' %}" class="dropdown-item">Tag</a>
+				  </div>
+				</div>
+
+				  
+	<a href="{{admin_obj.get_update_url}}" class="btn btn-light edit" style="{% if detail %}display:block;{% endif %}">Edit</a>
+	<a href="{{admin_obj.get_delete_url}}" class="btn btn-danger delete " style="{% if detail %}display:block;{% endif %}">Delete</a>
+
+{% endblock %}
